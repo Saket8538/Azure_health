@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title> Bot4u</title>
+    <style>
+        #webchat {
+            height: 500px;
+            width: 100%;
+            backgroud-color:lightskyblue;
+        }
+        body {
+            background-image: url('https://github.com/Saket8538/Quickhealth/blob/main/images/chatbot.jpg');
+            background-repeat: no-repeat;
+            background-size: cover; 
+            background-color: lightblue; 
+        }
+    </style>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+</head>
+<body>
+    <div id="webchat" role="main"></div>
+    <!-- Add a chatbot floating button -->
+    <div id="chatbot-button" class="chatbot-btn">
+        <i class="fas fa-comments"></i>
+    </div>
+    <iframe id="chatbot-frame" src="bot.html" class="chatbot-frame"></iframe>
+    <script>
+        const webChatSecret = "Bb6tU2Asn0kJQx7Q5YhGHKWXzMg6UPE1RFJF9qlPrmZb8ff7HG72JQQJ99BEACYeBjFAArohAAABAZBS1D6A.1cHhW1cHFuSWiKa3Uwokqh3G1fGRvohVxPvFHp6asrZyqo66F9qmJQQJ99BEACYeBjFAArohAAABAZBS2OuT";
+        window.WebChat.renderWebChat(
+            {
+                directLine: window.WebChat.createDirectLine({ token: webChatSecret }),
+                userID: 'YOUR_USER_ID',
+                username: 'YOUR_USERNAME',
+                locale: 'en-US',
+                styleOptions: {
+                    bubbleBackground: '#F4F4F4',
+                    bubbleFromUserBackground: '#F4F4F4'
+                }
+            },
+            document.getElementById('webchat')
+        );
+    </script>
+</body>
+</html>
